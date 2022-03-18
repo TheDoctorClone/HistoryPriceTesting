@@ -1,27 +1,48 @@
-﻿using Product.Database.Mongo.Entity;
+﻿using MongoDB.Driver;
+using Product.Database.Mongo.Entity;
 
 namespace Product.Database.Mongo.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        public Task<bool> AddProduct(ProductEntity p)
+        private readonly IMongoClient _mongoClient;
+        private readonly string _database = "HistoryPrice";
+        private readonly string _collectionName = "Product";
+        private readonly IMongoCollection<ProductEntity> Collection;
+
+        public ProductRepository(IMongoClient _mongoClient)
         {
-            throw new NotImplementedException();
+            if (_mongoClient == null)
+                throw new ArgumentNullException(nameof(_mongoClient));
+
+            this._mongoClient = _mongoClient;
+
+            if (!this._mongoClient.GetDatabase(_database).ListCollectionNames().ToList().Contains(_collectionName))
+                this._mongoClient.GetDatabase(_database).CreateCollection(_collectionName);
+
+            Collection = this._mongoClient.GetDatabase(_database).GetCollection<ProductEntity>(_collectionName);
         }
 
-        public Task<bool> AddProductDiscount(string ean, List<Discount> ld)
+        public async Task AddProduct(ProductEntity p)
         {
-            throw new NotImplementedException();
+            await Collection.InsertOneAsync(p);
         }
 
-        public Task<bool> AddProductPrice(string ean, List<Price> lp)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<bool> AddProductDiscount(List<DiscountEntity> ld)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<ProductEntity> GetProduct(string ean)
+        //public Task<bool> AddProductPrice(List<PriceEntity> lp)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public async Task<ProductEntity> GetProduct(string ean)
         {
-            throw new NotImplementedException();
+            var builder = Builders<ProductEntity>.Filter;
+            var filter = builder.Eq(p => p.Ean, ean);
+            return await Collection.Find(filter).FirstOrDefaultAsync();
         }
     }
 }

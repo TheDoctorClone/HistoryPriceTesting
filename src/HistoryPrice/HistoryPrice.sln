@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Database.Mongo", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Database.Tests", "..\Test\Product.Database.Tests\Product.Database.Tests.csproj", "{260EE88E-150C-4151-8956-8F71D8395D87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FFD9B832-74BB-4526-8300-8AECBA2A157C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{E06BA1B1-8E5C-4DDE-A774-2AC3FAD62E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Services", "Product.Services\Product.Services.csproj", "{36376962-3314-4010-8641-591502C52008}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +51,18 @@ Global
 		{260EE88E-150C-4151-8956-8F71D8395D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{260EE88E-150C-4151-8956-8F71D8395D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{260EE88E-150C-4151-8956-8F71D8395D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36376962-3314-4010-8641-591502C52008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36376962-3314-4010-8641-591502C52008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36376962-3314-4010-8641-591502C52008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36376962-3314-4010-8641-591502C52008}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C81AD1DE-1B35-40B5-A99E-215115853BE5} = {FFD9B832-74BB-4526-8300-8AECBA2A157C}
+		{2219DD10-1FA2-46EF-B202-86A3A3019423} = {E06BA1B1-8E5C-4DDE-A774-2AC3FAD62E63}
+		{260EE88E-150C-4151-8956-8F71D8395D87} = {FFD9B832-74BB-4526-8300-8AECBA2A157C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A66B4CD3-82B6-427C-8492-1D78A8D20B65}

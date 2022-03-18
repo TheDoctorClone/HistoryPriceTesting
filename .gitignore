@@ -13,3 +13,5 @@
 /src/HistoryPrice/WebApi/bin/Debug/net6.0
 /src/Test/Product.Database.Tests/bin/Debug/net6.0
 /src/Test/Product.Database.Tests/obj
+/src/HistoryPrice/Product.Services/obj
+/src/HistoryPrice/Product.Services/bin/Debug/net6.0
