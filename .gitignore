@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Test/Product.Tests/obj
+/src/HistoryPrice/PriceLibrary/obj
+/src/HistoryPrice/Product.Business/obj
+/src/HistoryPrice/WebApi/obj
+/src/Test/Product.Tests/bin/Debug/net6.0
