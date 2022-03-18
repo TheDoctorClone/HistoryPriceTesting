@@ -4,16 +4,16 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class ProductController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<ProductController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
         }
@@ -28,6 +28,24 @@ namespace WebApi.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPut("[action]")]
+        public async Task<IActionResult> AddProduct([FromBody] WeatherForecast forecast)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetProduct(string ean)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetProductSpecificDate(string ean, DateTime specificDate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

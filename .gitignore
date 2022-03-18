@@ -7,3 +7,9 @@
 /src/HistoryPrice/Product.Business/obj
 /src/HistoryPrice/WebApi/obj
 /src/Test/Product.Tests/bin/Debug/net6.0
+/src/HistoryPrice/PriceLibrary/bin/Debug/net6.0
+/src/HistoryPrice/Product.Database.Mongo/bin/Debug/net6.0
+/src/HistoryPrice/Product.Database.Mongo/obj
+/src/HistoryPrice/WebApi/bin/Debug/net6.0
+/src/Test/Product.Database.Tests/bin/Debug/net6.0
+/src/Test/Product.Database.Tests/obj
